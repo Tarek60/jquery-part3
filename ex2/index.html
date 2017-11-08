@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.2.1.js"></script>
+    <title>Partie3Ex2</title>
+  </head>
+  <body>
+    <button type="button" name="button" id="retirer">-</button>
+    <input type="text" name="nom" value="0" id="nombreClick"/>
+    <button type="button" name="button" id="ajouter">+</button>
+  </body>
+  <script type="text/javascript">
+  $(function(){
+    $('#ajouter').click(function(){
+      var valeur = $('#nombreClick').val();
+      valeur++;
+      $('#nombreClick').val(valeur);
+    });
+    $('#retirer').click(function(){
+      var valeur = $('#nombreClick').val();
+      valeur--;
+      $('#nombreClick').val(valeur);
+    });
+  });
+  </script>
+</html>

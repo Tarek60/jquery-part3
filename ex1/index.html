@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.2.1.js"></script>
+    <title>Exercice 1</title>
+  </head>
+  <body>
+    <button type="button" id="button">clique-moi</button>
+    <input type="text" value="0" id="clicks" />
+    <script>
+      $(function(){
+        $('#button').click(function(){
+          var count = $('#clicks').val();
+          count++;
+          $('#clicks').val(count);
+        });
+      });
+    </script>
+  </body>
+</html>

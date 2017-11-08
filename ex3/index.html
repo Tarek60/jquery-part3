@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-3.2.1.js"></script>
+  <title>Exercice 3</title>
+</head>
+<body>
+  <h2>Le prix est entre 0 et 100.</h2>
+  <h3 class="reponse">Trouvez le juste prix !</h3>
+    <input type="text" value="" placeholder="Entrez un nombre" id="nombre">
+    <button type="button" id="validez">Validez</button>
+  <script>
+  $(function(){
+    var prix = Math.round(Math.random() * 100);//cette fonction permet de générer un nombre aléatoire
+    var compteur = 0;
+    $('#validez').click(function(){
+      compteur++; //permet d'afficher le nombre d'essai que l'on a effectuer pour trouver le bon nombre
+      var choiceNumber = $('#nombre').val();//correspond à la valeur de l'input
+      if(isNaN(choiceNumber) == false){
+        if (choiceNumber == prix) {
+          $('.reponse').html('Vous avez gagné après ' + compteur + ' tentatives !');
+        } else if (choiceNumber < prix){
+          $('.reponse').html('Plus grand !');
+        } else {
+          $('.reponse').html('Plus petit !')
+        }
+      } else{
+        alert('Donnez un nombre')
+      }
+      $('#nombre').val('');//permet de vider l'input quand on a validez la valeur
+    });
+  });
+  </script>
+
+</body>
+</html>

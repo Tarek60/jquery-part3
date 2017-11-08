@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.2.1.js"></script>
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <button type="button" id="bouton1">Dimensions</button>
+    <button type="button" id="bouton2">Vert</button>
+    <button type="button" id="bouton3">Couleur d'origine</button>
+    <button type="button" id="bouton4">Cacher</button>
+    <button type="button" id="bouton5">Afficher</button>
+    <div id="rectangle"></div>
+    <style>
+      .rectangle {
+        height: 10px;
+        width: 500px;
+        background-color: red;
+      }
+    </style>
+    <script>
+    $(function(){
+      //Déclaration de la variable pour définir la hauteur de base
+      var hauteur = 10;
+      $('#bouton1').click(function(){
+        //Vérification de la hauteur
+        if(hauteur <= 100){
+          //Augementation de la hauteur de 10px si le rectangle fais 100pixels de hauteur ou moins
+          hauteur += 10;
+        }else{
+          //Remise à 10pixels la hauteur du réctangle si il dépasse 100pixels de hauteur
+          hauteur = 10;
+        }
+        $('#rectangle').css('height',hauteur+'px');
+      });
+      $('#bouton2').click(function(){
+        $('.rectangle').css('background-color', 'green')
+      });
+      $('#bouton3').click(function(){
+        $('.rectangle').css('background-color', 'red')
+      });
+      $('#bouton4').click(function(){
+        $('.rectangle').hide();
+      });
+      $('#bouton5').click(function(){
+        $('.rectangle').show();
+      });
+    });
+    </script>
+  </body>
+</html>
